@@ -18,7 +18,10 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": "airbnb-base"
+    "extends": "airbnb-base",
+    "rules": {
+      "no-use-before-define": "off"
+    }
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -32,6 +35,7 @@
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.2.0",
+    "nock": "^10.0.6",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
@@ -41,5 +45,12 @@
     "develop": "NODE_ENV=development node bin/cli.js",
     "start": "npm run develop",
     "build": "webpack -p"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "cheerio": "^1.0.0-rc.2",
+    "commander": "^2.19.0",
+    "node-fetch": "^2.3.0",
+    "word-wrap": "^1.2.3"
   }
 }

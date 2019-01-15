@@ -4,9 +4,6 @@ import { version } from '../package.json';
 import { parseSenseHTML } from './parser';
 import { fetchExplanationHTML, WordNotFound } from './apis';
 import { printExplanationJson } from './ultis/print';
-import setupNock from '../test/setupNock';
-
-// setupNock();
 
 let word;
 program

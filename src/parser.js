@@ -1,6 +1,6 @@
 import cheerio from 'cheerio';
 
-export function parseDictionaryHTML(html) {
+export function parseSenseHTML(html) {
   const $ = cheerio.load(html);
   const $dataRoot = $('#dataset-cald4');
 

@@ -10,7 +10,7 @@ class CambridgeFetchError extends Error {
   }
 }
 
-class WordNotFound extends Error {
+export class WordNotFound extends Error {
   constructor(message) {
     super(message);
     this.name = 'WordNotFound';
@@ -18,7 +18,7 @@ class WordNotFound extends Error {
 }
 
 // https://dictionary.cambridge.org/dictionary/english/hello
-export async function getDictionaryHTML(word, options = {}) {
+export async function fetchExplanationHTML(word, options = {}) {
   const { from, to } = {
     from: _.ENGLISH,
     to: _.ENGLISH,
@@ -37,5 +37,5 @@ export async function getDictionaryHTML(word, options = {}) {
 }
 
 export default {
-  getDictionaryHTML,
+  fetchExplanationHTML,
 };

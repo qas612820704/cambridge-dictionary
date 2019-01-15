@@ -29,7 +29,7 @@ export async function fetchExplanationHTML(word, options = {}) {
 
   const response = await fetch(`${DOMAIN}/dictionary/${language}/${word}`, { redirect: 'manual' });
 
-  if (response.status > 300 && response.status < 400) throw new WordNotFound(word);
+  if (isRedirect(response.status)) throw new WordNotFound(word);
 
   if (!response.ok) throw new CambridgeFetchError('Fail when getDictionaryHTML.');
 
@@ -39,3 +39,7 @@ export async function fetchExplanationHTML(word, options = {}) {
 export default {
   fetchExplanationHTML,
 };
+
+function isRedirect(code) {
+  return code > 300 && code < 400;
+}

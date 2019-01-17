@@ -1,12 +1,18 @@
 {
   "name": "cambridge-dictionary",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "An unofficial Cambridge Dictionary API",
   "author": "Lego <qas612820704@gmail.com> (https://lego-is.me)",
   "license": "MIT",
   "keywords": [
     "cambridge",
     "translate"
+  ],
+  "bin": {
+    "cambridge-dictionary": "bin/cli.js"
+  },
+  "files": [
+    "lib"
   ],
   "babel": {
     "presets": [

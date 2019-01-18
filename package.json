@@ -1,6 +1,6 @@
 {
   "name": "cambridge-dictionary",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An unofficial Cambridge Dictionary API",
   "author": "Lego <qas612820704@gmail.com> (https://lego-is.me)",
   "license": "MIT",
@@ -38,6 +38,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.2.0",
@@ -52,7 +53,7 @@
     "start": "npm run develop",
     "build": "webpack -p",
     "clean": "rimraf lib",
-    "prepublishOnly": "npm clean && npm build"
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",

@@ -1,10 +1,14 @@
 {
   "name": "cambridge-dictionary",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "An unofficial Cambridge Dictionary API",
   "author": "Lego <qas612820704@gmail.com> (https://lego-is.me)",
   "license": "MIT",
-  "keywords": [
+  "homepage": "https://github.com/qas612820704/cambridge-dictionary#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qas612820704/cambridge-dictionary.git"
+  },"keywords": [
     "cambridge",
     "translate"
   ],

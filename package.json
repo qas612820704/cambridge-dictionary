@@ -8,7 +8,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qas612820704/cambridge-dictionary.git"
-  },"keywords": [
+  },
+  "keywords": [
     "cambridge",
     "translate"
   ],
@@ -32,6 +33,9 @@
     "extends": "airbnb-base",
     "rules": {
       "no-use-before-define": "off"
+    },
+    "env": {
+      "mocha": true
     }
   },
   "devDependencies": {
@@ -43,9 +47,12 @@
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.2.0",
+    "mocha": "^5.2.0",
     "nock": "^10.0.6",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.28.4",
@@ -55,6 +62,7 @@
   "scripts": {
     "develop": "NODE_ENV=development node bin/cli.js",
     "start": "npm run develop",
+    "test": "mocha --require @babel/register",
     "build": "webpack -p",
     "clean": "rimraf lib",
     "prepublishOnly": "npm run clean && npm run build"

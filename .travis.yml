@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - stable
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+install:
+  - yarn install
+script:
+  - yarn test
+
+deploy:
+  provider: npm
+  api_key: $NPM_TOKEN
+  on:
+    tags: true

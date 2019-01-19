@@ -19,7 +19,7 @@ export function print(text = '', options = {}) {
   process.stdout.write(trimedText + end);
 }
 
-export function printExplanationJson({ word = '', explanations = [] }) {
+export function printExplanation({ word = '', explanations = [] }) {
   const posLength = explanations.length;
 
   print();
@@ -60,5 +60,5 @@ export function printExplanationJson({ word = '', explanations = [] }) {
 
 export default {
   print,
-  printExplanationJson,
+  printExplanation,
 };

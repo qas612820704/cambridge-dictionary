@@ -1,8 +1,8 @@
 import yargs from 'yargs';
 import ora from 'ora';
-import { parseSenseHTML } from './parser';
-import { fetchExplanationHTML, WordNotFound } from './apis';
-import { printExplanationJson } from './ultis/print';
+import { getExplanation } from './CambridgeDictionary';
+import { WordNotFound } from './apis';
+import { printExplanation } from './ultis/print';
 
 yargs
   .demandCommand(1)
@@ -18,10 +18,9 @@ main(yargs.argv);
 async function main({ _: [word] }) {
   const spinner = ora(`Searching "${word}"...`).start();
 
-  let explanations;
+  let explanation;
   try {
-    const html = await fetchExplanationHTML(word);
-    explanations = parseSenseHTML(html);
+    explanation = await getExplanation(word);
   } catch (e) {
     if (e instanceof WordNotFound) {
       spinner.fail(`"${word}" not founded!`);
@@ -33,8 +32,5 @@ async function main({ _: [word] }) {
 
   spinner.succeed();
 
-  printExplanationJson({
-    word,
-    explanations,
-  });
+  printExplanation(explanation);
 }

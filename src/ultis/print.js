@@ -47,7 +47,7 @@ export function printExplanation({ word = '', explanations = [] }) {
         }
         examples.forEach(
           (example) => {
-            const highlightedExample = example.replace(new RegExp(word, 'g'), chalk.bold.underline.white(word));
+            const highlightedExample = example.replace(new RegExp(word, 'gi'), w => chalk.bold.underline.white(w));
             print('- ', { indent: 2, end: '' });
             print(highlightedExample, { indent: 4, trimStart: true });
             print();

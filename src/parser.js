@@ -7,7 +7,7 @@ export function parseSenseHTML(html) {
   return $dataRoot.find('.entry-body__el').map((i, entry) => {
     const $entry = $(entry);
     return {
-      pos: $entry.find('.posgram .pos').text(),
+      pos: $entry.find('.posgram').text(),
       ipa_uk: $entry.find('.uk .ipa').text(),
       ipa_us: $entry.find('.us .ipa').text(),
       senses: $entry.find('.sense-block').map((j, sense) => {

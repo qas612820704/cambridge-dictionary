@@ -1,6 +1,6 @@
 {
   "name": "cambridge-dictionary",
-  "version": "0.0.6-test-travis-deploy-on-git-tag",
+  "version": "0.1.0",
   "description": "An unofficial Cambridge Dictionary API",
   "author": "Lego <qas612820704@gmail.com> (https://lego-is.me)",
   "license": "MIT",

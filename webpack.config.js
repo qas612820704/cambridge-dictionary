@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const { name: pkgName } = require('./package.json');
 
 module.exports = {
   devtool: 'source-map',
@@ -12,10 +13,13 @@ module.exports = {
   externals: [nodeExternals()],
   entry: {
     cli: path.join(__dirname, 'src', 'cli.js'),
+    'cambridge-dictionary': path.join(__dirname, 'src', 'index.js'),
   },
   output: {
     path: path.join(__dirname, 'lib'),
     filename: '[name].js',
+    libraryTarget: 'umd',
+    library: pkgName,
   },
   module: {
     rules: [

@@ -16,6 +16,7 @@
   "bin": {
     "cambridge-dictionary": "bin/cli.js"
   },
+  "main": "lib/cambridge-dictionary.js",
   "files": [
     "bin",
     "lib"

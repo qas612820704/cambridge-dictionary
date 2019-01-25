@@ -1,1 +1,7 @@
-export { getExplanation as default } from './CambridgeDictionary';
+import { getExplanation } from './CambridgeDictionary';
+
+export { getExplanation };
+
+export default {
+  getExplanation,
+};
